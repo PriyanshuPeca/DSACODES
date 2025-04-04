@@ -35,7 +35,7 @@ int  rec(int i,int x){
     //sace and return
  dp[i][x]=ans;
     
-    return  ans;
+    return  dp[i][x]=ans;
 }
 signed main(){
 
