@@ -52,3 +52,4 @@ cin>>x;
 memset(dp,-1,sizeof(dp));
 cout<<rec(0,x)<<endl;
 }
+msddmssss
