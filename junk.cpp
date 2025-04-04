@@ -7,7 +7,7 @@ using namespace std;
 const int MOD=1e9+7;
 const int INF=LLONG_MAX>>1;
 void solve(){
-    
+
 }
 signed main(){
 
