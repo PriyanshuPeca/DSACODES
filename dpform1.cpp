@@ -59,8 +59,7 @@
 
 //
 // 4N(1+AVG TRANSTION 3)==0(N)
-//circular
-
+//circular/////////////////////////////////////////
 #include<bits/stdc++.h>
 using namespace std;
 
