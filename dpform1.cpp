@@ -70,18 +70,20 @@ const int MOD=1e9+7;
 const int INF=LLONG_MAX>>1;
 int n;
 string s;
-int dp[100100][4];
-int rec(int i,int prev){
+int dp[100100][4][4];
+int rec(int i,int prev,int first){
 //pruning 
 
 //base case
+
 if(i==n){
-return 1;
+if(prev==first)return 0;
+    return 1;
 }
 
 //cache check
-if(prev!=-1 && dp[i][prev]!=-1){
-    return dp[i][prev];
+if(prev!=-1 && dp[i][prev][first]!=-1){
+    return dp[i][prev][first];
 }
 
 
@@ -90,7 +92,10 @@ int ans=0;
 if(s[i]=='?'){
     for(int ch=0;ch<4;ch++){
         if(ch==prev)continue;
-        ans+=rec(i+1,ch);
+        if(i==0)
+        ans+=rec(i+1,ch,ch);
+        else
+        ans+=rec(i+1,ch,first);
     }
 }
 else{
@@ -98,13 +103,17 @@ else{
         return 0;
     }
     else{
-        ans=rec(i+1,(s[i]-'A'));
+        if(i==0)
+        ans=rec(i+1,(s[i]-'A'),s[i]-'A');
+        else{
+        ans=rec(i+1,(s[i]-'A'),first);
+        }
     }
 }
 
 
 //save and return
-if(prev!=-1) dp[i][prev]=ans;
+if(prev!=-1) dp[i][prev][first]=ans;
 return ans;
 }
 signed main(){
@@ -114,6 +123,6 @@ signed main(){
     int t;
     cin>>n>>s;
     memset(dp,-1,sizeof(dp));
-    cout<<rec(0,-1);
+    cout<<rec(0,-1,-1);
     return 0;
 }
