@@ -77,7 +77,7 @@ int rec(int i,int prev,int first){
 //base case
 
 if(i==n){
-if(prev==first)return 0;
+if(prev==first && n!=1)return 0;
     return 1;
 }
 
@@ -122,6 +122,11 @@ signed main(){
     cin.tie(0),cout.tie(0);
     int t;
     cin>>n>>s;
+    // if(n==1){
+    //     if(s[0]=='?')cout<<4<<endl;
+    //     else
+    //     cout<<1<<endl;
+    // }
     memset(dp,-1,sizeof(dp));
     cout<<rec(0,-1,-1);
     return 0;
