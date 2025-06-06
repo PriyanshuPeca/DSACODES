@@ -6,15 +6,28 @@ using namespace std;
 
 const int MOD=1e9+7;
 const int INF=LLONG_MAX>>1;
-int fact(int x){
-    if(x==0){
-        return 1;
-    }
-    return x*fact(x-1);
+void ouput(int arr[]){
+
 }
-void solve(){
-cout<<fact(3);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 signed main(){
 
     ios_base::sync_with_stdio(0);
@@ -23,10 +36,9 @@ signed main(){
     //t=1;
     cin>>t;
     while(t--){
-        solve();
+        solve(t);
     }
-    
     return 0;
 }
 
-f
+ouptut (mxax)
